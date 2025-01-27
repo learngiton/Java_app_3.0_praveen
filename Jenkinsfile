@@ -35,7 +35,9 @@ pipeline{
             }
         }
         stage("input"){
+            script{
             input message: 'HI how are okay', ok: "yes"
+            }
         }
     }
 }
