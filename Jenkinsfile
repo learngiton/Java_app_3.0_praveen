@@ -35,7 +35,7 @@ pipeline{
             }
         }
         stage("input"){
-            script{
+            steps{
             input message: 'HI how are okay', ok: "yes"
             }
         }
