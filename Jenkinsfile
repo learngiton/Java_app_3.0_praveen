@@ -1,7 +1,6 @@
 @Library("my-aj-own")_
 
 parameters{
-    
     string(name: 'AJAY', defaultValue:'HI AJAY is displayed', description:'this is default description')
     choice(name: 'CHOICE', defaultValue: ['yes','no'], description:'description')
 }
@@ -20,11 +19,11 @@ pipeline{
             }
         }
         stage("build"){
-           steps{
-               script{
-                   maven()
-               }
-           } 
+            steps{
+                script{
+                    maven()
+                }
+            } 
         }
         stage("condition check"){
             when{
@@ -36,7 +35,7 @@ pipeline{
         }
         stage("check for input"){
             steps{
-                input message: 'Hi are you Ajay?', oK: 'yes'
+                input message: 'Hi are you Ajay?', ok: 'yes'
             }
         }
     }
