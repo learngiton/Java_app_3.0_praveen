@@ -34,15 +34,8 @@ pipeline{
                 echo "hi ajay "
             }
         }
-        // stage("check for input"){
-        //     steps{
-        //         input message: 'Hi are you Ajay?', oK: 'yes'
-        //     }
-        // }
-        stage("check for input"){
-            steps{
-                input message: 'Hi are you Ajay?', ok: 'yes'
-            }
+        stage("input"){
+            input message: 'HI how are okay', ok: "yes"
         }
     }
 }
