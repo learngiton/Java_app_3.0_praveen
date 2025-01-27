@@ -1,37 +1,37 @@
 @Library("my-aj-own")_
 
-pipeline {
-    agent any
+parameters{
+    
+    string(name:'AJAY',defaultValue:'HI AJAY is displayed',description:'this is default description')
+    choice(name:CHOICE,defaultValue:['yes','no'],description:'description')
+}
 
-    stages {
-        stage("Echo") {
-            steps {
-                echo "Working"
+pipeline{
+    agent any
+    stages{
+        stage("echo"){
+            steps{
+                echo "working"
             }
         }
-
-        stage("Checkout") {
-            steps {
-                // Cloning the repository from the specified branch
+        stage("checkout"){
+            steps{
                 git branch: 'main', url: 'https://github.com/learngiton/Java_app_3.0_praveen.git'
             }
         }
-
-        stage("Build") {
-            steps {
-                script {
-                    // Call your custom shared library function "maven"
-                    maven()
-                }
-            }
+        stage("build"){
+           steps{
+               script{
+                   maven()
+               }
+           } 
         }
-
-        stage("Condition Check") {
-            when {
-                branch 'main' // Executes this stage only if the branch is 'main'
+        stage("condition check"){
+            when{
+                experssion{params.CHOICE == 'yes'}
             }
-            steps {
-                echo "Hi Ajay, this is the main branch!"
+            steps{
+                echo "hi ajay "
             }
         }
     }
