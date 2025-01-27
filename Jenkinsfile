@@ -9,7 +9,7 @@ pipeline{
             }
         }
         stage("checkout"){
-            https://github.com/learngiton/Java_app_3.0_praveen.git
+           git branch: 'main', url: 'https://github.com/learngiton/Java_app_3.0_praveen.git'
         }
     }
 }
