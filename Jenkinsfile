@@ -8,5 +8,8 @@ pipeline{
                 echo "working"
             }
         }
+        stage("checkout"){
+            https://github.com/learngiton/Java_app_3.0_praveen.git
+        }
     }
 }
