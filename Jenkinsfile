@@ -28,7 +28,7 @@ pipeline{
         }
         stage("condition check"){
             when{
-                experssion{params.CHOICE == 'yes'}
+                expression{params.CHOICE == 'yes'}
             }
             steps{
                 echo "hi ajay "
