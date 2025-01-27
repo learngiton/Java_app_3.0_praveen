@@ -13,5 +13,12 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/learngiton/Java_app_3.0_praveen.git'
             }
         }
+        stage("build"){
+           steps{
+               script{
+                   maven()
+               }
+           } 
+        }
     }
 }
