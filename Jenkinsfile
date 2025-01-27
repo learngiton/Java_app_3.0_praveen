@@ -15,10 +15,18 @@ pipeline{
         }
         stage("build"){
            steps{
-             script{
-                maven()  
+               script{
+                   maven()
                }
-             } 
+           } 
+        }
+        stage("condition check"){
+            when{
+                 branch 'main'
+            }
+            steps{
+                echo "hi ajay "
+            }
         }
     }
 }
