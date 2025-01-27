@@ -18,7 +18,7 @@ pipeline{
         stage('Git Checkout'){
                     when { expression {  params.action == 'create' } }
             steps{
-            sh "git branch: 'main', url: 'https://github.com/learngiton/Java_app_3.0_praveen.git'"
+             "git branch: 'main', url: 'https://github.com/learngiton/Java_app_3.0_praveen.git'"
             }
         }
         stage("build"){
