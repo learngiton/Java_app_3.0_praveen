@@ -36,7 +36,7 @@ pipeline{
         }
         stage("check for input"){
             steps{
-                input message: 'Hi are you Ajay'?, OK: 'yes'
+                input message: 'Hi are you Ajay?', OK: 'yes'
             }
         }
     }
